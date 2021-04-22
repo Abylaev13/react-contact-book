@@ -10,9 +10,13 @@ const AddContact = (props) => {
         let newContact = {
             name,
             surname,
-            phone
+            phone,
+            id: Date.now()
         }
         props.handleNewContact(newContact)
+        setName('')
+        setSurname('')
+        setPhone('')
     }
     return (
         <div>
@@ -20,16 +24,19 @@ const AddContact = (props) => {
                 onChange={(e) => setName(e.target.value)} 
                 type="text" 
                 placeholder="Имя"
+                value={name}
             />
             <input 
                 onChange={(e) => setSurname(e.target.value)} 
                 type="text" 
                 placeholder="Фамилия"
+                value={surname}
                 />
             <input 
                 onChange={(e) => setPhone(e.target.value)}
                 type="text" 
                 placeholder="Номер телефона"
+                value={phone}
                 />
             <button onClick={handleClick}>Add contact</button>
         </div>
