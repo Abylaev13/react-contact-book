@@ -1,0 +1,11 @@
+ul{
+    min-width:200px;
+    max-width:400px;
+    border:1px solid black;
+    border-radius: 5px;
+    padding:20px;
+    list-style-type: none;
+   
+    
+    
+}

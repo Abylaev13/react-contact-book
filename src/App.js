@@ -1,5 +1,6 @@
 import AddContact from "./components/AddContact/AddContact";
 import React, { useState } from 'react'
+import ContactList from "./components/ContactsList/ContactList";
 
 
 function App() {
@@ -9,14 +10,29 @@ function App() {
   function handleNewContact(newContact){
     let newContactsArray = [...contacts]
     newContactsArray.push(newContact)
+
     setContacts(newContactsArray)
-    console.log(contacts)
+    
   }
+
+  function handleDeleteContact(id){
+    let newContactsArray = contacts.filter(item =>{
+      return item.id != id
+    })
+    setContacts(newContactsArray)
+  }
+
+
+
   return (
     <div className="App">
       <AddContact
       
         handleNewContact={handleNewContact}
+      />
+      <ContactList
+        contacts={contacts}
+        handleDeleteContact={handleDeleteContact}
       />
     </div>
   );
