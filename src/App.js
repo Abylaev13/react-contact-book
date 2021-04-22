@@ -20,7 +20,7 @@ function App() {
       return item.id != id
     })
     setContacts(newContactsArray)
-    alert("я сработал")
+   
   }
 
 
